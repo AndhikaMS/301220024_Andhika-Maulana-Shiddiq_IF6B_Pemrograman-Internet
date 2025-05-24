@@ -1,11 +1,14 @@
 <?php
 session_start();
+include 'koneksi.php';
 $error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'] ?? '';
     $password = $_POST['password'] ?? '';
-    if ($username === 'admin' && $password === 'admin123') {
-        $_SESSION['user'] = $username;
+    $query = mysqli_query($conn, "SELECT * FROM user WHERE username='" . mysqli_real_escape_string($conn, $username) . "' AND password='" . mysqli_real_escape_string($conn, $password) . "' AND role='admin'");
+    if ($row = mysqli_fetch_assoc($query)) {
+        $_SESSION['user'] = $row['username'];
+        $_SESSION['role'] = $row['role'];
         header('Location: home.php');
         exit();
     } else {

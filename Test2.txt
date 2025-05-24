@@ -1,0 +1,26 @@
+create database tumbuh_lestari;
+
+use tumbuh_lestari;
+
+  CREATE TABLE produk (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama VARCHAR(100),
+    harga INT,
+    created_at DATETIME
+  );
+
+  CREATE TABLE blog (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    judul VARCHAR(200),
+    konten TEXT,
+    created_at DATETIME
+  );
+
+   CREATE TABLE user (
+       id INT AUTO_INCREMENT PRIMARY KEY,
+       username VARCHAR(50) NOT NULL UNIQUE,
+       password VARCHAR(255) NOT NULL,
+       role ENUM('admin') NOT NULL DEFAULT 'admin'
+   );
+
+   INSERT INTO user (username, password, role) VALUES ('admin', 'admin123', 'admin');
