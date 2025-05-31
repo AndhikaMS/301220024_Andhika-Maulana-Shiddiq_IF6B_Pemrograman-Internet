@@ -64,7 +64,7 @@ if ($q) {
                 <svg width="20" height="20" fill="none" stroke="#ff8800" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3v4M8 3v4"/></svg>
                 Produk
             </a>
-            <a href="#" class="menu-item">
+            <a href="blog.php" class="menu-item">
                 <svg width="20" height="20" fill="none" stroke="#888" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M8 3v4M16 3v4"/></svg>
                 Blog
             </a>
@@ -98,7 +98,11 @@ if ($q) {
                     <tbody>
                     <?php foreach ($produk as $p): ?>
                         <tr>
-                            <td><img src="<?= $p['gambar'] ? 'uploads/' . htmlspecialchars($p['gambar']) : 'https://via.placeholder.com/48x48?text=IMG' ?>" class="produk-img" alt="img"></td>
+                            <td>
+                            <?php if ($p['gambar']): ?>
+                              <img src="uploads/<?= htmlspecialchars($p['gambar']) ?>" class="produk-img" alt="img">
+                            <?php endif; ?>
+                            </td>
                             <td class="produk-nama"><?= htmlspecialchars($p['nama']) ?></td>
                             <td class="produk-harga">Rp.<br><?= number_format($p['harga'],0,',','.') ?></td>
                             <td class="produk-date"><?= date('n/j/Y, g:i:s A', strtotime($p['created_at'])) ?></td>

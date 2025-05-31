@@ -24,3 +24,9 @@ use tumbuh_lestari;
    );
 
    INSERT INTO user (username, password, role) VALUES ('admin', 'admin123', 'admin');
+
+
+      ALTER TABLE produk
+     ADD COLUMN link_shopee VARCHAR(255) AFTER harga,
+     ADD COLUMN deskripsi TEXT AFTER link_shopee,
+     ADD COLUMN gambar VARCHAR(255) AFTER deskripsi;

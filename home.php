@@ -61,7 +61,7 @@ if ($blog_q) {
                 <svg width="20" height="20" fill="none" stroke="#888" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3v4M8 3v4"/></svg>
                 Produk
             </a>
-            <a href="#" class="menu-item">
+            <a href="blog.php" class="menu-item">
                 <svg width="20" height="20" fill="none" stroke="#888" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M8 3v4M16 3v4"/></svg>
                 Blog
             </a>
