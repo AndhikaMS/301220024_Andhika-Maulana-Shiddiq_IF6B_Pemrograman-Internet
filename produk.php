@@ -98,11 +98,19 @@ if ($q) {
                     <tbody>
                     <?php foreach ($produk as $p): ?>
                         <tr>
-                            <td><img src="https://via.placeholder.com/48x48?text=IMG" class="produk-img" alt="img"></td>
+                            <td><img src="<?= $p['gambar'] ? 'uploads/' . htmlspecialchars($p['gambar']) : 'https://via.placeholder.com/48x48?text=IMG' ?>" class="produk-img" alt="img"></td>
                             <td class="produk-nama"><?= htmlspecialchars($p['nama']) ?></td>
                             <td class="produk-harga">Rp.<br><?= number_format($p['harga'],0,',','.') ?></td>
                             <td class="produk-date"><?= date('n/j/Y, g:i:s A', strtotime($p['created_at'])) ?></td>
-                            <td class="produk-action"><span class="produk-dot">...</span></td>
+                            <td class="produk-action">
+                              <div style="position:relative;">
+                                <span class="produk-dot" onclick="toggleMenu(this)">...</span>
+                                <div class="produk-menu" style="display:none;position:absolute;right:0;top:24px;background:#fff;border:1px solid #eee;border-radius:6px;box-shadow:0 2px 8px #0001;z-index:10;min-width:90px;">
+                                  <a href="produk_edit.php?id=<?= $p['id'] ?>" style="display:block;padding:8px 16px;color:#333;text-decoration:none;">Edit</a>
+                                  <a href="#" onclick="hapusProduk(<?= $p['id'] ?>);return false;" style="display:block;padding:8px 16px;color:#d00;text-decoration:none;">Delete</a>
+                                </div>
+                              </div>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                     </tbody>
@@ -111,5 +119,23 @@ if ($q) {
         </div>
     </div>
 </div>
+<script>
+function toggleMenu(el) {
+  document.querySelectorAll('.produk-menu').forEach(m => m.style.display = 'none');
+  var menu = el.nextElementSibling;
+  menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+  document.addEventListener('click', function handler(e) {
+    if (!menu.contains(e.target) && e.target !== el) {
+      menu.style.display = 'none';
+      document.removeEventListener('click', handler);
+    }
+  });
+}
+function hapusProduk(id) {
+  if (confirm('Yakin ingin menghapus produk ini?')) {
+    window.location.href = 'produk_hapus.php?id=' + id;
+  }
+}
+</script>
 </body>
 </html> 
