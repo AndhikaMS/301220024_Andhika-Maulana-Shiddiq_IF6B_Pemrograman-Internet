@@ -1,3 +1,15 @@
+<?php
+include 'koneksi.php';
+
+// Ambil beberapa data produk terbaru
+$produk_promo = [];
+$q_promo = mysqli_query($conn, "SELECT * FROM produk ORDER BY created_at DESC LIMIT 2"); // Ambil 2 produk terbaru
+if ($q_promo) {
+    while ($row_promo = mysqli_fetch_assoc($q_promo)) {
+        $produk_promo[] = $row_promo;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -317,6 +329,93 @@
                 font-size: 20px;
             }
         }
+        .offer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 64px 48px;
+            min-height: 480px;
+            background: #c7b299;
+            margin: 48px auto;
+            max-width: 1000px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(90,70,52,0.1);
+        }
+        .offer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 32px;
+        }
+        .header-text {
+            max-width: 600px;
+        }
+        .offer-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #5a4634;
+            margin-bottom: 12px;
+        }
+        .offer-desc {
+            font-size: 16px;
+            color: #5a4634;
+            line-height: 1.6;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .btn-lihat-semua {
+            background: #a94442;
+            color: #fff;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-lihat-semua:hover {
+            background: #ff8800;
+        }
+        .offer-products {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+        }
+        .product-card {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 24px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(90,70,52,0.08);
+        }
+        .product-image {
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+        .product-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #5a4634;
+            margin-bottom: 8px;
+        }
+        .product-process {
+            font-size: 14px;
+            color: #5a4634;
+            margin-bottom: 4px;
+        }
+        .product-process-desc {
+            font-size: 14px;
+            color: #5a4634;
+        }
     </style>
 </head>
 <body>
@@ -392,6 +491,32 @@
                 <h2 class="overview-title">Proses Pengerjaan</h2>
                 <p class="overview-desc">Proses kopi dari panen hingga pengemasan, biji kopi berkualitas tinggi siap untuk dijual dan dinikmati oleh konsumen.</p>
             </div>
+        </div>
+    </div>
+
+    <div id="offer" class="offer-container">
+        <div class="offer-header">
+            <div class="header-text">
+                <h2 class="offer-title">Penawaran Terbaik Kami</h2>
+                <p class="offer-desc">Kami menyediakan berbagai macam produk berkualitas yang bisa Anda dapatkan dengan harga terbaik.</p>
+            </div>
+            <a href="produk.php" class="btn-lihat-semua">Lihat Semua</a>
+        </div>
+        <div class="offer-products">
+            <?php foreach ($produk_promo as $p): ?>
+            <div class="product-card">
+                <?php if (!empty($p['gambar'])): // Check if image exists ?>
+                    <img src="uploads/<?= htmlspecialchars($p['gambar']) ?>" alt="<?= htmlspecialchars($p['nama']) ?>" class="product-image"/>
+                <?php else: // Placeholder if no image ?>
+                    <img src="https://via.placeholder.com/200x250?text=No+Image" alt="No image available" class="product-image"/>
+                <?php endif; ?>
+                <h3 class="product-name"><?= htmlspecialchars($p['nama']) ?></h3>
+                <!-- Assuming no specific process field, using static text for now -->
+                <p class="product-process">Process Detail</p>
+                <p class="product-process-desc">Detail proses pengolahan kopi ini.</p>
+            </div>
+            <?php endforeach; ?>
+             <!-- Add more product cards here if needed -->
         </div>
     </div>
 
