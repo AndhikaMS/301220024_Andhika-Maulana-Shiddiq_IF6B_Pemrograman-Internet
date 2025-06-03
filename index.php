@@ -124,7 +124,7 @@
         <div class="logo"><span>TL</span> Tumbuh Lestari</div>
         <div class="nav-menu">
             <a href="#">Home</a>
-            <a href="#about">About</a>
+            <a href="about.php">About</a>
             <a href="#contact">Contact</a>
             <a href="#products">Products</a>
             <a href="#blog">Blog</a>
