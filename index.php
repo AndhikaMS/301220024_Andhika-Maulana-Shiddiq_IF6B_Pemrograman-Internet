@@ -3,7 +3,7 @@ include 'koneksi.php';
 
 // Ambil beberapa data produk terbaru
 $produk_promo = [];
-$q_promo = mysqli_query($conn, "SELECT * FROM produk ORDER BY created_at DESC LIMIT 2"); // Ambil 2 produk terbaru
+$q_promo = mysqli_query($conn, "SELECT * FROM produk ORDER BY created_at DESC LIMIT 3"); // Ambil 3 produk terbaru
 if ($q_promo) {
     while ($row_promo = mysqli_fetch_assoc($q_promo)) {
         $produk_promo[] = $row_promo;
@@ -335,34 +335,54 @@ if ($q_promo) {
             align-items: center;
             padding: 64px 48px;
             min-height: 480px;
-            background: #c7b299;
+            background: #e9ded6; /* Background color from image */
             margin: 48px auto;
             max-width: 1000px;
             border-radius: 12px;
             box-shadow: 0 8px 24px rgba(90,70,52,0.1);
+            position: relative; /* Needed for absolute positioning of decorative elements */
+            overflow: hidden; /* Hide overflowing decorative elements */
         }
+
+        .offer-container::before { /* Decorative flower element */
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 150px; /* Adjust size as needed */
+            height: 150px; /* Adjust size as needed */
+            background-image: url('https://svgshare.com/i/14kf.svg'); /* Placeholder SVG for flower */
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: translate(-50%, -50%);
+            opacity: 0.6; /* Adjust opacity as needed */
+            z-index: 1; /* Ensure it's behind content */
+        }
+
         .offer-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            margin-bottom: 32px;
+            margin-bottom: 40px; /* Increased margin */
+            z-index: 2; /* Ensure header is above decorative element */
         }
         .header-text {
             max-width: 600px;
+            text-align: left;
         }
         .offer-title {
             font-size: 36px;
             font-weight: 700;
-            color: #5a4634;
+            color: #a68a64; /* Font color from image */
             margin-bottom: 12px;
         }
         .offer-desc {
             font-size: 16px;
-            color: #5a4634;
+            color: #5a4634; /* Font color from image */
             line-height: 1.6;
-            max-width: 400px;
-            margin: 0 auto;
+            max-width: unset;
+            margin: 0;
         }
         .btn-lihat-semua {
             background: #a94442;
@@ -374,6 +394,7 @@ if ($q_promo) {
             font-weight: bold;
             cursor: pointer;
             transition: background 0.2s;
+            flex-shrink: 0;
         }
         .btn-lihat-semua:hover {
             background: #ff8800;
@@ -381,10 +402,12 @@ if ($q_promo) {
         .offer-products {
             display: flex;
             justify-content: center;
-            gap: 48px;
+            gap: 24px;
+            flex-wrap: wrap;
+            z-index: 2; /* Ensure products are above decorative element */
         }
         .product-card {
-            flex: 1;
+            flex: 0 1 calc(33.333% - 16px);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -395,8 +418,9 @@ if ($q_promo) {
             box-shadow: 0 4px 16px rgba(90,70,52,0.08);
         }
         .product-image {
-            width: 200px;
-            height: 250px;
+            width: 100%;
+            max-width: 200px;
+            height: auto;
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 16px;
@@ -409,13 +433,168 @@ if ($q_promo) {
         }
         .product-process {
             font-size: 14px;
-            color: #5a4634;
+            color: #a68a64; /* Adjusted font color */
             margin-bottom: 4px;
         }
         .product-process-desc {
             font-size: 14px;
-            color: #5a4634;
+            color: #a68a64; /* Adjusted font color */
         }
+        @media (max-width: 768px) {
+            .offer-products {
+                gap: 16px;
+            }
+            .product-card {
+                flex: 0 1 calc(50% - 8px);
+            }
+            .offer-container::before {
+                width: 100px;
+                height: 100px;
+            }
+        }
+        @media (max-width: 480px) {
+            .offer-products {
+                gap: 12px;
+            }
+            .product-card {
+                flex: 0 1 100%;
+            }
+            .offer-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+            .btn-lihat-semua {
+                width: 100%;
+                text-align: center;
+            }
+            .offer-container::before {
+                width: 80px;
+                height: 80px;
+            }
+        }
+        .footer-container {
+            background-color: #a68a64; /* Background color from image */
+            padding: 64px 24px 40px 24px; /* Adjusted padding top to accommodate wave */
+            position: relative; /* Needed for absolute positioning of decorative wave */
+             overflow: hidden; /* Hide overflowing wave */
+        }
+
+         .footer-container::before { /* Decorative wave element */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px; /* Adjust height as needed */
+            background-image: url('https://svgshare.com/i/14kr.svg'); /* Placeholder SVG for wave */
+            background-size: cover;
+            background-repeat: no-repeat;
+            transform: translateY(-80px); /* Move the wave up to overlap */
+            z-index: 1; /* Ensure it's behind content */
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: 0 auto;
+            gap: 24px;
+            flex-wrap: wrap;
+            z-index: 2; /* Ensure content is above wave */
+             position: relative; /* Needed for z-index to work */
+        }
+        .footer-col {
+            flex: 1 1 200px;
+            text-align: left;
+        }
+        .footer-col h3 {
+            color: #5a4634; /* Font color from image */
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+        .footer-col ul li a {
+            color: #5a4634; /* Link color from image */
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+         .footer-col ul li a:hover {
+            color: #3a2c20;
+        }
+        .footer-col p {
+             color: #5a4634; /* Paragraph color from image */
+             margin-bottom: 8px;
+             font-size: 15px;
+        }
+        .footer-col connect-with p {
+            color: #5a4634; /* Paragraph color from image */
+            margin-bottom: 8px;
+        }
+        .footer-col subscribe {
+            text-align: left;
+        }
+        .footer-col subscribe .social-icons {
+            display: flex;
+            gap: 16px;
+            justify-content: flex-start;
+        }
+        .footer-col subscribe .social-icons a {
+            display: block;
+            width: 24px;
+            height: 24px;
+        }
+        .footer-col subscribe .social-icons a img {
+            width: 100%;
+            height: 100%;
+        }
+        .footer-copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(90,70,52,0.2);
+            margin-top: 20px;
+            z-index: 2; /* Ensure copyright is above wave */
+             position: relative; /* Needed for z-index to work */
+        }
+        .footer-copyright p {
+            color: #5a4634; /* Copyright text color from image */
+            font-size: 14px;
+        }
+
+         @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 32px;
+                text-align: center;
+            }
+            .footer-col {
+                flex: unset;
+                width: 100%;
+                text-align: center;
+            }
+             .footer-col subscribe .social-icons {
+                 justify-content: center;
+             }
+              .footer-container::before {
+                 height: 60px; /* Adjust wave height */
+                 transform: translateY(-60px);
+             }
+        }
+
+          @media (max-width: 480px) {
+               .footer-container::before {
+                 height: 40px; /* Adjust wave height */
+                 transform: translateY(-40px);
+             }
+          }
+
     </style>
 </head>
 <body>
@@ -519,6 +698,41 @@ if ($q_promo) {
              <!-- Add more product cards here if needed -->
         </div>
     </div>
+
+    <footer class="footer-container">
+        <div class="footer-content">
+            <div class="footer-col quick-links">
+                <h3>Quick</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="produk.php">Products</a></li>
+                    <li><a href="blog.php">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col connect-with">
+                <h3>Connect with</h3>
+                <p>tumbuhlestaritalks@gmail.com</p>
+                <p>+62 838 3203 3996</p>
+            </div>
+            <div class="footer-col kerja-sama">
+                <h3>Kerja Sama</h3>
+                <p>Gudang Madala Haji</p>
+                <p>Petani Milenial Sukarame</p>
+            </div>
+            <div class="footer-col subscribe">
+                <h3>Subscribe now</h3>
+                 <div class="social-icons">
+                    <a href="#"><img src="https://via.placeholder.com/24x24" alt="Instagram"/></a> <!-- Placeholder for Instagram icon -->
+                    <a href="#"><img src="https://via.placeholder.com/24x24" alt="Facebook"/></a> <!-- Placeholder for Facebook icon -->
+                 </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>Copyright © 2024 Tumbuh Lestari</p>
+        </div>
+    </footer>
 
 </body>
 </html> 
