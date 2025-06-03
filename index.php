@@ -222,6 +222,101 @@
                 font-size: 22px;
             }
         }
+        .process-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 64px 48px;
+            min-height: 480px;
+            background: #c7b299;
+            margin: 48px auto;
+            max-width: 1000px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(90,70,52,0.1);
+            gap: 48px;
+        }
+        .process-steps {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            padding-right: 24px;
+            border-right: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .step {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .step-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: #5a4634;
+        }
+        .step-desc {
+            font-size: 15px;
+            color: #5a4634;
+            line-height: 1.5;
+        }
+        .process-overview {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-left: 24px;
+        }
+        .coffee-beans-illustration {
+            width: 100px;
+            height: auto;
+            margin-bottom: 24px;
+        }
+        .coffee-beans-illustration img {
+            width: 100%;
+            height: auto;
+        }
+        .overview-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #5a4634;
+            margin-bottom: 12px;
+        }
+        .overview-desc {
+            font-size: 16px;
+            color: #5a4634;
+            line-height: 1.6;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        @media (max-width: 900px) {
+            .process-container {
+                flex-direction: column;
+                padding: 32px 16px;
+                gap: 32px;
+            }
+            .process-steps {
+                padding-right: 0;
+                border-right: none;
+                padding-bottom: 32px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            }
+            .process-overview {
+                padding-left: 0;
+            }
+        }
+        @media (max-width: 600px) {
+            .process-container {
+                border-radius: 0;
+                margin: 0;
+            }
+            .overview-title {
+                font-size: 28px;
+            }
+            .step-number {
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -269,6 +364,33 @@
                         <div class="stat-label">Biji kopi asli dipetik oleh petani profesional.</div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="process" class="process-container">
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-number">1. Panen</div>
+                <div class="step-desc">Proses kopi dimulai dengan panen, di mana buah kopi dipetik secara selektif</div>
+            </div>
+            <div class="step">
+                <div class="step-number">2. Roasting</div>
+                <div class="step-desc">Biji kopi mentah dipanggang pada suhu tinggi untuk mengembangkan rasa dan aroma.</div>
+            </div>
+            <div class="step">
+                <div class="step-number">3. Packaging</div>
+                <div class="step-desc">Bubuk atau biji kopi yang sudah dipanggang dikemas dalam kemasan yang sesuai untuk menjaga kesegarannya.</div>
+            </div>
+        </div>
+        <div class="process-overview">
+            <div class="coffee-beans-illustration">
+                <!-- Placeholder for coffee beans SVG -->
+                <img src="https://svgshare.com/i/14kD.svg" alt="Coffee beans illustration" />
+            </div>
+            <div class="overview-content">
+                <h2 class="overview-title">Proses Pengerjaan</h2>
+                <p class="overview-desc">Proses kopi dari panen hingga pengemasan, biji kopi berkualitas tinggi siap untuk dijual dan dinikmati oleh konsumen.</p>
             </div>
         </div>
     </div>
