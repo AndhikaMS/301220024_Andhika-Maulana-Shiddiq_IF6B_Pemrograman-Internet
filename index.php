@@ -601,11 +601,11 @@ if ($q_promo) {
     <div class="navbar">
         <div class="logo"><span>TL</span> Tumbuh Lestari</div>
         <div class="nav-menu">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#contact">Contact</a>
-            <a href="#products">Products</a>
-            <a href="#blog">Blog</a>
+            <a href="index.php">Home</a>
+            <a href="about.php">About</a>
+            <a href="#">Contact</a>
+            <a href="produk.php">Products</a>
+            <a href="blog.php">Blog</a>
         </div>
     </div>
     <div class="main">
