@@ -236,7 +236,7 @@
             }
         }
         .hero-main-container {
-            background-image: url('https://www.eurekalert.org/multimedia/pub/891797.jpg?download=true');
+            background-image: url('https://cdn.pixabay.com/photo/2017/01/13/09/23/magic-cube-1976725_1280.jpg');
             background-size: cover;
             background-position: center;
             min-height: 520px;
@@ -342,6 +342,104 @@
                 margin-bottom: 0;
             }
         }
+
+        /* History Image Section Styles */
+        .history-image-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .history-company-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 900px) {
+            .history-image-container {
+                margin-top: 20px;
+            }
+            .history-company-image {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .history-image-container {
+                margin-top: 15px;
+            }
+            .history-company-image {
+                border-radius: 8px;
+            }
+        }
+
+        /* Image Section Styles */
+        .image-section {
+            text-align: center;
+            margin: 60px auto;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .image-section-title {
+            font-size: 2.5rem;
+            color: #5a4634;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .image-section-subtitle {
+            font-size: 1.1rem;
+            color: #8D6B4F;
+            margin-bottom: 2.5rem;
+            line-height: 1.5;
+        }
+
+        .company-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            display: block;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 900px) {
+            .image-section {
+                margin: 40px auto;
+                padding: 0 15px;
+            }
+            .image-section-title {
+                font-size: 2rem;
+            }
+            .image-section-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+            .company-image {
+                border-radius: 10px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .image-section {
+                margin: 30px auto;
+                padding: 0 10px;
+            }
+            .image-section-title {
+                font-size: 1.8rem;
+            }
+            .image-section-subtitle {
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
+            }
+            .company-image {
+                border-radius: 8px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -368,7 +466,7 @@
 
     <div class="about-main">
         <div class="about-image">
-            <img src="https://i.ibb.co/L9g0XqY/about-image.jpg" alt="Tumbuh Lestari Coffee Beans">
+            <img src="https://via.placeholder.com/600x400/C7B299/FFFFFF?text=About+Us+Image" alt="Tumbuh Lestari Coffee Beans">
         </div>
         <div class="about-content-bg">
             <div class="about-header">
@@ -386,8 +484,21 @@
                 <p class="about-desc">
                     Penjualan kami berkembang dari mulut ke mulut dan sistem pre-order, hingga akhir 2022 kami mulai menggarap marketplace online.
                 </p>
+                <div class="history-image-container">
+                    <img src="https://cdn.pixabay.com/photo/2017/01/13/09/23/magic-cube-1976725_1280.jpg" alt="Coffee Farm History" class="history-company-image">
+                </div>
             </div>
         </div>
+    </div>
+
+    <div class="image-section">
+        <h2 class="image-section-title">Kebun Kami</h2>
+        <p class="image-section-subtitle">Segar dan Alami, Langsung Dari Kebun Kami</p>
+        <img src="https://cdn.pixabay.com/photo/2017/01/13/09/23/magic-cube-1976725_1280.jpg" alt="Kebun Kopi Kami" class="company-image">
+    </div>
+
+    <div class="values-grid">
+        <!-- Existing values-grid content -->
     </div>
 
 </body>
