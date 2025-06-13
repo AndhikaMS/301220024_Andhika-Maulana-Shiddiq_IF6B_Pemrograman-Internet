@@ -605,7 +605,7 @@
         <div class="nav-menu">
             <a href="index.php">Home</a>
             <a href="about.php">About</a>
-            <a href="#">Contact</a>
+            <a href="contact.php">Contact</a>
             <a href="produk.php">Products</a>
             <a href="blog.php">Blog</a>
         </div>
