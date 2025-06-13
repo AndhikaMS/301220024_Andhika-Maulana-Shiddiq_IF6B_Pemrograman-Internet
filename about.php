@@ -440,6 +440,163 @@
                 border-radius: 8px;
             }
         }
+
+        /* Team Section Styles */
+        .team-section {
+            padding: 80px 24px;
+            text-align: center;
+            background: #e9ded6;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-section::before {
+            content: url('https://svgshare.com/i/14k7.svg'); /* left coffee bean */
+            position: absolute;
+            left: 5%;
+            top: 50%;
+            transform: translateY(-50%) rotate(0deg);
+            opacity: 0.7;
+            width: 100px;
+            height: auto;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .team-section::after {
+            content: url('https://svgshare.com/i/14k7.svg'); /* right coffee bean */
+            position: absolute;
+            right: 5%;
+            top: 20%;
+            transform: translateY(-50%) rotate(45deg);
+            opacity: 0.7;
+            width: 100px;
+            height: auto;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .team-title {
+            font-size: 38px;
+            color: #5a4634;
+            margin-bottom: 24px;
+            font-weight: 700;
+            z-index: 2;
+            position: relative;
+        }
+
+        .team-highlight {
+            color: #a94442;
+        }
+
+        .team-members {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 60px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .team-member-card {
+            background: #e9ded6;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 280px;
+            box-shadow: none; /* remove box shadow */
+            position: relative;
+            z-index: 2;
+        }
+
+        .member-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background-color: #c7b299; /* Placeholder background */
+            margin: 0 auto 20px auto;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid rgba(255, 255, 255, 0.5); /* Semi-transparent white border */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .member-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #5a4634;
+            margin-bottom: 8px;
+        }
+
+        .member-position {
+            font-size: 16px;
+            color: #a68a64;
+        }
+
+        @media (max-width: 900px) {
+            .team-section {
+                padding: 60px 16px;
+            }
+            .team-title {
+                font-size: 32px;
+            }
+            .team-members {
+                gap: 30px;
+            }
+            .team-member-card {
+                width: 250px;
+            }
+            .member-photo {
+                width: 160px;
+                height: 160px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .team-section {
+                padding: 40px 10px;
+            }
+            .team-title {
+                font-size: 28px;
+                margin-bottom: 16px;
+            }
+            .team-members {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 40px;
+            }
+            .team-member-card {
+                width: 80%;
+                max-width: 300px;
+            }
+            .member-photo {
+                width: 150px;
+                height: 150px;
+            }
+            .team-section::before,
+            .team-section::after {
+                width: 70px; /* Smaller coffee bean images on mobile */
+            }
+            .team-section::before {
+                top: 10%;
+                left: -10px;
+            }
+            .team-section::after {
+                top: 80%;
+                right: -10px;
+            }
+        }
+        /* End Team Section Styles */
     </style>
 </head>
 <body>
@@ -495,6 +652,33 @@
         <h2 class="image-section-title">Kebun Kami</h2>
         <p class="image-section-subtitle">Segar dan Alami, Langsung Dari Kebun Kami</p>
         <img src="https://cdn.pixabay.com/photo/2017/01/13/09/23/magic-cube-1976725_1280.jpg" alt="Kebun Kopi Kami" class="company-image">
+    </div>
+
+    <div class="team-section">
+        <h2 class="team-title">Kebersamaan dalam <span class="team-highlight">Keberhasilan</span></h2>
+        <div class="team-members">
+            <div class="team-member-card">
+                <div class="member-photo">
+                    <!-- Photo for Afrizal Ahmad Rasyidin -->
+                </div>
+                <h3 class="member-name">Afrizal Ahmad Rasyidin</h3>
+                <p class="member-position">Head & Quality Control</p>
+            </div>
+            <div class="team-member-card">
+                <div class="member-photo">
+                    <!-- Photo for Fridka Ramadhan Sundara -->
+                </div>
+                <h3 class="member-name">Fridka Ramadhan Sundara</h3>
+                <p class="member-position">Social Media Manager</p>
+            </div>
+            <div class="team-member-card">
+                <div class="member-photo">
+                    <!-- Photo for Adi Setiadi -->
+                </div>
+                <h3 class="member-name">Adi Setiadi</h3>
+                <p class="member-position">Field Management</p>
+            </div>
+        </div>
     </div>
 
     <div class="values-grid">
