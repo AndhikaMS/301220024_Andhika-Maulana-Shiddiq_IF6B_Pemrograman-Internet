@@ -605,7 +605,7 @@ if ($q_promo) {
             <a href="about.php">About</a>
             <a href="contact.php">Contact</a>
             <a href="productspage.php">Products</a>
-            <a href="blog.php">Blog</a>
+            <a href="blogpage.php">Blog</a>
         </div>
     </div>
     <div class="main">
@@ -708,7 +708,7 @@ if ($q_promo) {
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="produk.php">Products</a></li>
-                    <li><a href="blog.php">Blog</a></li>
+                    <li><a href="blogpage.php">Blog</a></li>
                 </ul>
             </div>
             <div class="footer-col connect-with">

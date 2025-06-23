@@ -239,7 +239,7 @@ if ($q) {
             <a href="about.php">About</a>
             <a href="contact.php">Contact</a>
             <a href="productspage.php">Products</a>
-            <a href="blog.php">Blog</a>
+            <a href="blogpage.php">Blog</a>
         </div>
     </div>
 
@@ -257,12 +257,7 @@ if ($q) {
                     <?php endif; ?>
                     <h3 class="product-name"><?= htmlspecialchars($p['nama']) ?></h3>
                     <p class="product-desc">
-                        <strong>Informasi dari biji kopi :</strong><br>
-                        Origin: <?= htmlspecialchars($p['origin']) ?><br>
-                        Varietas: <?= htmlspecialchars($p['varietas']) ?><br>
-                        Proses: <?= htmlspecialchars($p['proses']) ?><br>
-                        Profil Sangrai: <?= htmlspecialchars($p['profil_sangrai']) ?><br>
-                        Tasting notes: <?= htmlspecialchars($p['tasting_notes']) ?>
+                        <?= nl2br(htmlspecialchars($p['deskripsi'])) ?>
                     </p>
                     <p class="product-price">Rp. <?= number_format($p['harga'], 0, ',', '.') ?></p>
                     <button class="btn-buy">Pesan Sekarang</button>

@@ -607,7 +607,7 @@
             <a href="about.php">About</a>
             <a href="contact.php">Contact</a>
             <a href="productspage.php">Products</a>
-            <a href="blog.php">Blog</a>
+            <a href="blogpage.php">Blog</a>
         </div>
     </div>
 
