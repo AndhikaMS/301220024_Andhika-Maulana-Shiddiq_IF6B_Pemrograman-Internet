@@ -18,32 +18,42 @@ if ($q_promo) {
     <title>Tumbuh Lestari - Landing Page</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --coklat-bg: #d6b89c;
+            --coklat-tua: #a06a2b;
+            --coklat-muda: #c7a97b;
+            --putih: #fff;
+            --coklat-teks: #a06a2b;
+            --coklat-btn: #a06a2b;
+            --coklat-btn-hover: #8b5c1e;
+        }
         body {
             margin: 0;
             font-family: 'Montserrat', Arial, sans-serif;
-            background: #e9ded6;
-            color: #5a4634;
+            background: var(--coklat-bg);
+            color: var(--coklat-teks);
         }
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 24px 48px 12px 48px;
+            padding: 32px 48px 0 48px;
             background: transparent;
         }
         .logo {
+            font-size: 2.2rem;
             font-weight: bold;
-            font-size: 22px;
-            color: #a94442;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
+            color: var(--coklat-tua);
+            letter-spacing: 2px;
+            font-family: serif;
         }
         .logo span {
+            color: #b23b1a;
             font-family: serif;
-            font-size: 32px;
+            font-size: 2.5rem;
+            font-weight: bold;
             margin-right: 8px;
-            color: #a94442;
+            letter-spacing: 0;
         }
         .nav-menu {
             display: flex;
@@ -51,88 +61,113 @@ if ($q_promo) {
         }
         .nav-menu a {
             text-decoration: none;
-            color: #5a4634;
+            color: var(--putih);
             font-weight: 500;
-            font-size: 16px;
+            font-size: 1.1rem;
             transition: color 0.2s;
+            position: relative;
         }
-        .nav-menu a:hover {
-            color: #ff8800;
+        .nav-menu a.active, .nav-menu a:hover {
+            color: var(--coklat-tua);
         }
-        .main {
+        .nav-menu a.active::after, .nav-menu a:hover::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--coklat-tua);
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+        }
+        .hero {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 48px 64px 0 64px;
-            min-height: 420px;
+            padding: 64px 48px 0 48px;
+            position: relative;
         }
-        .main-text {
-            max-width: 480px;
+        .hero-bg-motif {
+            position: absolute;
+            left: 0; top: 0; bottom: 0; width: 50vw; z-index: 0;
+            background: url('https://svgshare.com/i/14kf.svg') left top repeat-y;
+            opacity: 0.13;
         }
-        .main-title {
-            font-size: 44px;
+        .hero-text {
+            max-width: 50%;
+            z-index: 1;
+        }
+        .hero-title {
+            font-size: 4rem;
             font-weight: 700;
-            color: #a68a64;
-            margin-bottom: 8px;
+            color: var(--coklat-tua);
+            letter-spacing: 1px;
         }
-        .main-title span {
-            color: #fff;
+        .hero-title span {
+            color: var(--putih);
         }
-        .main-desc {
-            font-size: 16px;
-            color: #a68a64;
-            margin-bottom: 24px;
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--putih);
+            margin: 16px 0 0 0;
+            font-weight: 400;
         }
-        .btn-explore {
-            background: #a94442;
-            color: #fff;
+        .hero-desc {
+            color: var(--coklat-tua);
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+        }
+        .hero-btn {
+            background: var(--coklat-btn);
+            color: var(--putih);
             border: none;
-            padding: 12px 32px;
+            padding: 14px 36px;
+            font-size: 1.1rem;
             border-radius: 4px;
-            font-size: 16px;
-            font-weight: bold;
             cursor: pointer;
+            font-weight: 600;
             transition: background 0.2s;
+            margin-top: 32px;
         }
-        .btn-explore:hover {
-            background: #ff8800;
+        .hero-btn:hover {
+            background: var(--coklat-btn-hover);
         }
-        .main-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .hero-img {
+            z-index: 1;
         }
-        .main-image img {
-            width: 320px;
-            max-width: 100%;
-            filter: drop-shadow(0 8px 32px rgba(90,70,52,0.18));
+        .hero-img img {
+            width: 400px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
         }
         .info-bar {
             display: flex;
-            justify-content: center;
             gap: 48px;
-            margin: 32px 0 0 0;
-            font-size: 16px;
-            color: #a68a64;
+            margin: 48px 0 0 48px;
+            font-size: 1.2rem;
         }
-        .info-bar strong {
-            color: #a94442;
-            font-weight: bold;
+        .info-bar .stat-label {
+            color: var(--coklat-tua);
+            font-weight: 500;
+        }
+        .info-bar .stat-value {
+            color: var(--putih);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-left: 8px;
         }
         @media (max-width: 900px) {
-            .main { flex-direction: column; padding: 32px 16px 0 16px; }
-            .main-image { margin-top: 32px; }
+            .hero { flex-direction: column; padding: 32px 12px 0 12px; }
+            .hero-text { max-width: 100%; text-align: center; }
+            .hero-img img { width: 90vw; max-width: 350px; margin-top: 32px; }
+            .info-bar { justify-content: center; margin-left: 0; }
+            .navbar { flex-direction: column; gap: 16px; padding: 24px 12px 0 12px; }
         }
-        @media (max-width: 600px) {
-            .navbar { flex-direction: column; padding: 16px; }
-            .main { padding: 16px; }
-            .main-title { font-size: 32px; }
-        }
+        /* --- About, Process, Offer, Footer: gunakan warna dan font yang sama --- */
         .about-main {
             display: flex;
             min-height: 480px;
-            background: #e9ded6;
+            background: #b9935a;
             margin: 48px auto 0 auto;
             max-width: 1200px;
             border-radius: 12px;
@@ -142,7 +177,7 @@ if ($q_promo) {
         .about-image {
             flex: 1.1;
             min-width: 320px;
-            background: #c7b299;
+            background: var(--coklat-muda);
             display: flex;
             align-items: stretch;
             justify-content: stretch;
@@ -155,7 +190,7 @@ if ($q_promo) {
         }
         .about-content-bg {
             flex: 1.5;
-            background: #e9ded6 url('https://svgshare.com/i/14kA.svg'); /* motif biji kopi SVG transparan */
+            background: var(--coklat-bg) url('https://svgshare.com/i/14kA.svg');
             background-repeat: repeat;
             background-size: 120px;
             padding: 48px 40px 40px 40px;
@@ -166,24 +201,24 @@ if ($q_promo) {
             width: 100%;
         }
         .about-title {
-            color: #a94442;
+            color: var(--coklat-tua);
             font-size: 20px;
             margin-bottom: 12px;
             font-weight: 700;
         }
         .about-headline {
-            font-size: 32px;
-            color: #5a4634;
+            font-size: 2.2rem;
+            color: var(--putih);
             margin-bottom: 18px;
             font-weight: 700;
             line-height: 1.2;
         }
         .about-headline .highlight {
-            color: #a94442;
+            color: var(--coklat-tua);
         }
         .about-desc {
-            color: #5a4634;
-            font-size: 16px;
+            color: var(--putih);
+            font-size: 1.1rem;
             margin-bottom: 32px;
             line-height: 1.7;
             max-width: 600px;
@@ -197,53 +232,27 @@ if ($q_promo) {
             text-align: left;
         }
         .stat-value {
-            font-size: 32px;
-            color: #a94442;
+            font-size: 2rem;
+            color: var(--coklat-tua);
             font-weight: bold;
             margin-bottom: 4px;
         }
         .stat-label {
-            color: #5a4634;
-            font-size: 15px;
+            color: var(--putih);
+            font-size: 1rem;
             max-width: 180px;
         }
-        @media (max-width: 900px) {
-            .about-main {
-                flex-direction: column;
-                min-height: unset;
-            }
-            .about-content-bg {
-                padding: 32px 16px;
-            }
-            .about-stats {
-                gap: 24px;
-            }
-        }
-        @media (max-width: 600px) {
-            .about-main {
-                border-radius: 0;
-                margin: 0;
-            }
-            .about-content-bg {
-                padding: 20px 8px;
-            }
-            .about-headline {
-                font-size: 22px;
-            }
-            .stat-value {
-                font-size: 22px;
-            }
-        }
+        /* --- Proses Section --- */
         .process-container {
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 64px 48px;
             min-height: 480px;
-            background: #c7b299;
+            background: #b9935a;
             margin: 48px auto;
             max-width: 1000px;
-            border-radius: 12px;
+            border-radius: 24px;
             box-shadow: 0 8px 24px rgba(90,70,52,0.1);
             gap: 48px;
         }
@@ -261,13 +270,13 @@ if ($q_promo) {
             gap: 4px;
         }
         .step-number {
-            font-size: 24px;
+            font-size: 1.3rem;
             font-weight: 700;
-            color: #5a4634;
+            color: var(--coklat-tua);
         }
         .step-desc {
-            font-size: 15px;
-            color: #5a4634;
+            font-size: 1rem;
+            color: var(--putih);
             line-height: 1.5;
         }
         .process-overview {
@@ -289,122 +298,93 @@ if ($q_promo) {
             height: auto;
         }
         .overview-title {
-            font-size: 36px;
+            font-size: 2rem;
             font-weight: 700;
-            color: #5a4634;
+            color: var(--putih);
             margin-bottom: 12px;
         }
         .overview-desc {
-            font-size: 16px;
-            color: #5a4634;
+            font-size: 1.1rem;
+            color: var(--putih);
             line-height: 1.6;
             max-width: 400px;
             margin: 0 auto;
         }
-        @media (max-width: 900px) {
-            .process-container {
-                flex-direction: column;
-                padding: 32px 16px;
-                gap: 32px;
-            }
-            .process-steps {
-                padding-right: 0;
-                border-right: none;
-                padding-bottom: 32px;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            }
-            .process-overview {
-                padding-left: 0;
-            }
-        }
-        @media (max-width: 600px) {
-            .process-container {
-                border-radius: 0;
-                margin: 0;
-            }
-            .overview-title {
-                font-size: 28px;
-            }
-            .step-number {
-                font-size: 20px;
-            }
-        }
+        /* --- Penawaran Section --- */
         .offer-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             padding: 64px 48px;
             min-height: 480px;
-            background: #e9ded6; /* Background color from image */
+            background: #b9935a;
             margin: 48px auto;
             max-width: 1000px;
-            border-radius: 12px;
+            border-radius: 24px;
             box-shadow: 0 8px 24px rgba(90,70,52,0.1);
-            position: relative; /* Needed for absolute positioning of decorative elements */
-            overflow: hidden; /* Hide overflowing decorative elements */
+            position: relative;
+            overflow: hidden;
         }
-
-        .offer-container::before { /* Decorative flower element */
+        .offer-container::before {
             content: '';
             position: absolute;
             top: 50%;
             left: 0;
-            width: 150px; /* Adjust size as needed */
-            height: 150px; /* Adjust size as needed */
-            background-image: url('https://svgshare.com/i/14kf.svg'); /* Placeholder SVG for flower */
+            width: 150px;
+            height: 150px;
+            background-image: url('https://svgshare.com/i/14kf.svg');
             background-size: contain;
             background-repeat: no-repeat;
             transform: translate(-50%, -50%);
-            opacity: 0.6; /* Adjust opacity as needed */
-            z-index: 1; /* Ensure it's behind content */
+            opacity: 0.13;
+            z-index: 1;
         }
-
         .offer-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            margin-bottom: 40px; /* Increased margin */
-            z-index: 2; /* Ensure header is above decorative element */
+            margin-bottom: 40px;
+            z-index: 2;
         }
         .header-text {
             max-width: 600px;
             text-align: left;
         }
         .offer-title {
-            font-size: 36px;
+            font-size: 2rem;
             font-weight: 700;
-            color: #a68a64; /* Font color from image */
+            color: var(--coklat-tua);
             margin-bottom: 12px;
         }
         .offer-desc {
-            font-size: 16px;
-            color: #5a4634; /* Font color from image */
+            font-size: 1.1rem;
+            color: var(--putih);
             line-height: 1.6;
             max-width: unset;
             margin: 0;
         }
         .btn-lihat-semua {
-            background: #a94442;
-            color: #fff;
+            background: var(--coklat-btn);
+            color: var(--putih);
             border: none;
             padding: 12px 32px;
             border-radius: 4px;
-            font-size: 16px;
+            font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
             transition: background 0.2s;
             flex-shrink: 0;
         }
         .btn-lihat-semua:hover {
-            background: #ff8800;
+            background: var(--coklat-btn-hover);
         }
         .offer-products {
             display: flex;
             justify-content: center;
             gap: 24px;
             flex-wrap: wrap;
-            z-index: 2; /* Ensure products are above decorative element */
+            z-index: 2;
         }
         .product-card {
             flex: 0 1 calc(33.333% - 16px);
@@ -413,7 +393,7 @@ if ($q_promo) {
             align-items: center;
             text-align: center;
             padding: 24px;
-            background: #fff;
+            background: var(--putih);
             border-radius: 8px;
             box-shadow: 0 4px 16px rgba(90,70,52,0.08);
         }
@@ -426,74 +406,40 @@ if ($q_promo) {
             margin-bottom: 16px;
         }
         .product-name {
-            font-size: 20px;
+            font-size: 1.2rem;
             font-weight: 700;
-            color: #5a4634;
+            color: var(--coklat-tua);
             margin-bottom: 8px;
         }
         .product-process {
-            font-size: 14px;
-            color: #a68a64; /* Adjusted font color */
+            font-size: 1rem;
+            color: var(--coklat-tua);
             margin-bottom: 4px;
         }
         .product-process-desc {
-            font-size: 14px;
-            color: #a68a64; /* Adjusted font color */
+            font-size: 1rem;
+            color: var(--coklat-tua);
         }
-        @media (max-width: 768px) {
-            .offer-products {
-                gap: 16px;
-            }
-            .product-card {
-                flex: 0 1 calc(50% - 8px);
-            }
-            .offer-container::before {
-                width: 100px;
-                height: 100px;
-            }
-        }
-        @media (max-width: 480px) {
-            .offer-products {
-                gap: 12px;
-            }
-            .product-card {
-                flex: 0 1 100%;
-            }
-            .offer-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 16px;
-            }
-            .btn-lihat-semua {
-                width: 100%;
-                text-align: center;
-            }
-            .offer-container::before {
-                width: 80px;
-                height: 80px;
-            }
-        }
+        /* --- Footer --- */
         .footer-container {
-            background-color: #a68a64; /* Background color from image */
-            padding: 64px 24px 40px 24px; /* Adjusted padding top to accommodate wave */
-            position: relative; /* Needed for absolute positioning of decorative wave */
-             overflow: hidden; /* Hide overflowing wave */
+            background-color: var(--coklat-tua);
+            padding: 64px 24px 40px 24px;
+            position: relative;
+            overflow: hidden;
         }
-
-         .footer-container::before { /* Decorative wave element */
+        .footer-container::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 80px; /* Adjust height as needed */
-            background-image: url('https://svgshare.com/i/14kr.svg'); /* Placeholder SVG for wave */
+            height: 80px;
+            background-image: url('https://svgshare.com/i/14kr.svg');
             background-size: cover;
             background-repeat: no-repeat;
-            transform: translateY(-80px); /* Move the wave up to overlap */
-            z-index: 1; /* Ensure it's behind content */
+            transform: translateY(-80px);
+            z-index: 1;
         }
-
         .footer-content {
             display: flex;
             justify-content: space-between;
@@ -501,16 +447,16 @@ if ($q_promo) {
             margin: 0 auto;
             gap: 24px;
             flex-wrap: wrap;
-            z-index: 2; /* Ensure content is above wave */
-             position: relative; /* Needed for z-index to work */
+            z-index: 2;
+            position: relative;
         }
         .footer-col {
             flex: 1 1 200px;
             text-align: left;
         }
         .footer-col h3 {
-            color: #5a4634; /* Font color from image */
-            font-size: 18px;
+            color: var(--putih);
+            font-size: 1.1rem;
             margin-bottom: 16px;
         }
         .footer-col ul {
@@ -521,111 +467,93 @@ if ($q_promo) {
             margin-bottom: 8px;
         }
         .footer-col ul li a {
-            color: #5a4634; /* Link color from image */
+            color: var(--putih);
             text-decoration: none;
             transition: color 0.2s;
         }
-         .footer-col ul li a:hover {
-            color: #3a2c20;
+        .footer-col ul li a:hover {
+            color: #e0c9a6;
         }
         .footer-col p {
-             color: #5a4634; /* Paragraph color from image */
-             margin-bottom: 8px;
-             font-size: 15px;
-        }
-        .footer-col connect-with p {
-            color: #5a4634; /* Paragraph color from image */
+            color: var(--putih);
             margin-bottom: 8px;
+            font-size: 1rem;
         }
-        .footer-col subscribe {
-            text-align: left;
-        }
-        .footer-col subscribe .social-icons {
+        .footer-col.subscribe .social-icons {
             display: flex;
             gap: 16px;
             justify-content: flex-start;
         }
-        .footer-col subscribe .social-icons a {
+        .footer-col.subscribe .social-icons a {
             display: block;
             width: 24px;
             height: 24px;
         }
-        .footer-col subscribe .social-icons a img {
+        .footer-col.subscribe .social-icons a img {
             width: 100%;
             height: 100%;
         }
         .footer-copyright {
             text-align: center;
             padding-top: 20px;
-            border-top: 1px solid rgba(90,70,52,0.2);
+            border-top: 1px solid rgba(255,255,255,0.2);
             margin-top: 20px;
-            z-index: 2; /* Ensure copyright is above wave */
-             position: relative; /* Needed for z-index to work */
+            z-index: 2;
+            position: relative;
         }
         .footer-copyright p {
-            color: #5a4634; /* Copyright text color from image */
-            font-size: 14px;
+            color: var(--putih);
+            font-size: 0.95rem;
         }
-
-         @media (max-width: 768px) {
-            .footer-content {
-                flex-direction: column;
-                align-items: center;
-                gap: 32px;
-                text-align: center;
-            }
-            .footer-col {
-                flex: unset;
-                width: 100%;
-                text-align: center;
-            }
-             .footer-col subscribe .social-icons {
-                 justify-content: center;
-             }
-              .footer-container::before {
-                 height: 60px; /* Adjust wave height */
-                 transform: translateY(-60px);
-             }
+        @media (max-width: 900px) {
+            .about-main, .process-container, .offer-container { flex-direction: column; min-height: unset; border-radius: 0; margin: 0; }
+            .about-content-bg, .process-container, .offer-container { padding: 32px 16px; }
+            .about-stats, .offer-products { gap: 24px; }
+            .footer-content { flex-direction: column; align-items: center; gap: 32px; text-align: center; }
+            .footer-col { flex: unset; width: 100%; text-align: center; }
+            .footer-col.subscribe .social-icons { justify-content: center; }
+            .footer-container::before { height: 60px; transform: translateY(-60px); }
         }
-
-          @media (max-width: 480px) {
-               .footer-container::before {
-                 height: 40px; /* Adjust wave height */
-                 transform: translateY(-40px);
-             }
-          }
-
+        @media (max-width: 600px) {
+            .hero-title { font-size: 2.2rem; }
+            .about-headline { font-size: 1.2rem; }
+            .overview-title { font-size: 1.2rem; }
+            .stat-value { font-size: 1.2rem; }
+            .main-image img, .hero-img img { width: 90vw; max-width: 350px; }
+            .footer-container::before { height: 40px; transform: translateY(-40px); }
+        }
     </style>
 </head>
 <body>
     <div class="navbar">
-        <div class="logo"><span>TL</span> Tumbuh Lestari</div>
+        <div class="logo"><span>TL</span> <span style="font-family:sans-serif;font-size:1.2rem;font-weight:400;letter-spacing:2px;color:#fff;vertical-align:middle;">TUMBUH LESTARI</span></div>
         <div class="nav-menu">
-            <a href="index.php">Home</a>
+            <a href="index.php" class="active">Home</a>
             <a href="about.php">About</a>
             <a href="contact.php">Contact</a>
             <a href="productspage.php">Products</a>
             <a href="blogpage.php">Blog</a>
         </div>
     </div>
-    <div class="main">
-        <div class="main-text">
-            <div class="main-title"><span>Tumbuh</span> Lestari</div>
-            <div class="main-desc">Menyiup Keharmonisan Lingkungan dan Kenikmatan Rasa</div>
-            <button class="btn-explore" onclick="window.location.href='login.php'">Explore</button>
+    <div class="hero">
+        <div class="hero-bg-motif"></div>
+        <div class="hero-text">
+            <div class="hero-title">Tumbuh <span>Lestari</span></div>
+            <div class="hero-subtitle">Menyulam Keharmonisan Lingkungan dan Kenikmatan Rasa</div>
+            <button class="hero-btn" onclick="window.location.href='productspage.php'">Explore</button>
+            <div class="info-bar">
+                <div><span class="stat-label">Roast Fresh</span> <span class="stat-value">98% Fresh</span></div>
+                <div><span class="stat-label">Bean Inventory</span> <span class="stat-value">1,234kg</span></div>
+            </div>
         </div>
-        <div class="main-image">
-            <img src="https://img.freepik.com/free-vector/coffee-cup-coffee-beans_1284-42107.jpg?w=826&t=st=1718000000~exp=1718000600~hmac=placeholder" alt="Coffee Illustration">
+        <div class="hero-img">
+            <img src="https://cdn.pixabay.com/photo/2017/02/27/16/29/coffee-beans-2103613_1280.jpg" alt="Coffee Beans">
         </div>
     </div>
-    <div class="info-bar">
-        <div>Roast Fresh <br><strong>98% Fresh</strong></div>
-        <div>Bean Inventory <br><strong>1,234kg</strong></div>
-    </div>
-
+    <!-- About Section -->
     <div id="about" class="about-main">
         <div class="about-image">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Hutan kopi" />
+            <img src="https://cdn.pixabay.com/photo/2022/07/09/18/14/forest-7311484_1280.jpg" alt="Hutan kopi" />
         </div>
         <div class="about-content-bg">
             <div class="about-header">
@@ -645,7 +573,7 @@ if ($q_promo) {
             </div>
         </div>
     </div>
-
+    <!-- Proses Section -->
     <div id="process" class="process-container">
         <div class="process-steps">
             <div class="step">
@@ -663,42 +591,39 @@ if ($q_promo) {
         </div>
         <div class="process-overview">
             <div class="coffee-beans-illustration">
-                <!-- Placeholder for coffee beans SVG -->
-                <img src="https://svgshare.com/i/14kD.svg" alt="Coffee beans illustration" />
+                <img src="https://cdn.pixabay.com/photo/2022/03/13/15/45/coffee-7066308_1280.jpg" alt="Coffee beans illustration" style="border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.08);"/>
             </div>
             <div class="overview-content">
-                <h2 class="overview-title">Proses Pengerjaan</h2>
+                <h2 class="overview-title">Proses <span style="color:var(--coklat-tua);">Pengerjaan</span></h2>
                 <p class="overview-desc">Proses kopi dari panen hingga pengemasan, biji kopi berkualitas tinggi siap untuk dijual dan dinikmati oleh konsumen.</p>
             </div>
         </div>
     </div>
-
+    <!-- Penawaran Section -->
     <div id="offer" class="offer-container">
         <div class="offer-header">
             <div class="header-text">
-                <h2 class="offer-title">Penawaran Terbaik Kami</h2>
+                <h2 class="offer-title">Penawaran <span style="color:var(--putih);">Terbaik Kami</span></h2>
                 <p class="offer-desc">Kami menyediakan berbagai macam produk berkualitas yang bisa Anda dapatkan dengan harga terbaik.</p>
             </div>
-            <a href="produk.php" class="btn-lihat-semua">Lihat Semua</a>
+            <a href="productspage.php" class="btn-lihat-semua">Lihat Semua</a>
         </div>
         <div class="offer-products">
             <?php foreach ($produk_promo as $p): ?>
             <div class="product-card">
-                <?php if (!empty($p['gambar'])): // Check if image exists ?>
+                <?php if (!empty($p['gambar'])): ?>
                     <img src="uploads/<?= htmlspecialchars($p['gambar']) ?>" alt="<?= htmlspecialchars($p['nama']) ?>" class="product-image"/>
-                <?php else: // Placeholder if no image ?>
+                <?php else: ?>
                     <img src="https://via.placeholder.com/200x250?text=No+Image" alt="No image available" class="product-image"/>
                 <?php endif; ?>
                 <h3 class="product-name"><?= htmlspecialchars($p['nama']) ?></h3>
-                <!-- Assuming no specific process field, using static text for now -->
-                <p class="product-process">Process Detail</p>
-                <p class="product-process-desc">Detail proses pengolahan kopi ini.</p>
+                <p class="product-process">Semiwash Process</p>
+                <p class="product-process-desc">Proses olah giling basah (semi wash process).</p>
             </div>
             <?php endforeach; ?>
-             <!-- Add more product cards here if needed -->
         </div>
     </div>
-
+    <!-- Footer -->
     <footer class="footer-container">
         <div class="footer-content">
             <div class="footer-col quick-links">
@@ -707,8 +632,8 @@ if ($q_promo) {
                     <li><a href="#">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="produk.php">Products</a></li>
-                    <li><a href="blogpage.php">Blog</a></li>
+                    <li><a href="#offer">Products</a></li>
+                    <li><a href="#blog">Blog</a></li>
                 </ul>
             </div>
             <div class="footer-col connect-with">
@@ -724,8 +649,8 @@ if ($q_promo) {
             <div class="footer-col subscribe">
                 <h3>Subscribe now</h3>
                  <div class="social-icons">
-                    <a href="#"><img src="https://via.placeholder.com/24x24" alt="Instagram"/></a> <!-- Placeholder for Instagram icon -->
-                    <a href="#"><img src="https://via.placeholder.com/24x24" alt="Facebook"/></a> <!-- Placeholder for Facebook icon -->
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"/></a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"/></a>
                  </div>
             </div>
         </div>
@@ -733,6 +658,5 @@ if ($q_promo) {
             <p>Copyright © 2024 Tumbuh Lestari</p>
         </div>
     </footer>
-
 </body>
 </html> 
