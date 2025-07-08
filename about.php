@@ -9,29 +9,32 @@
         body {
             margin: 0;
             font-family: 'Montserrat', Arial, sans-serif;
-            background: #e9ded6;
+            background: #d6b89c;
             color: #5a4634;
         }
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 24px 48px 12px 48px;
+            padding: 32px 48px 0 48px;
             background: transparent;
         }
         .logo {
+            font-size: 2.2rem;
             font-weight: bold;
-            font-size: 22px;
-            color: #a94442;
-            letter-spacing: 1px;
+            color: #a06a2b;
+            letter-spacing: 2px;
+            font-family: serif;
             display: flex;
             align-items: center;
         }
         .logo span {
+            color: #b23b1a;
             font-family: serif;
-            font-size: 32px;
+            font-size: 2.5rem;
+            font-weight: bold;
             margin-right: 8px;
-            color: #a94442;
+            letter-spacing: 0;
         }
         .nav-menu {
             display: flex;
@@ -39,13 +42,24 @@
         }
         .nav-menu a {
             text-decoration: none;
-            color: #5a4634;
+            color: #fff;
             font-weight: 500;
-            font-size: 16px;
+            font-size: 1.1rem;
             transition: color 0.2s;
+            position: relative;
         }
-        .nav-menu a:hover {
-            color: #ff8800;
+        .nav-menu a.active, .nav-menu a:hover {
+            color: #a06a2b;
+        }
+        .nav-menu a.active::after, .nav-menu a:hover::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: #a06a2b;
+            position: absolute;
+            left: 0;
+            bottom: -4px;
         }
         .about-container {
             max-width: 1200px;
@@ -57,8 +71,8 @@
             margin-bottom: 48px;
         }
         .about-title {
-            font-size: 36px;
-            color: #a94442;
+            color: #a06a2b;
+            font-size: 20px;
             margin-bottom: 16px;
         }
         .about-subtitle {
@@ -133,7 +147,7 @@
         .about-main {
             display: flex;
             min-height: 480px;
-            background: #e9ded6;
+            background: #b9935a;
             margin: 48px auto 0 auto;
             max-width: 1200px;
             border-radius: 12px;
@@ -143,7 +157,7 @@
         .about-image {
             flex: 1.1;
             min-width: 320px;
-            background: #c7b299;
+            background: #b9935a;
             display: flex;
             align-items: stretch;
             justify-content: stretch;
@@ -156,7 +170,7 @@
         }
         .about-content-bg {
             flex: 1.5;
-            background: #e9ded6 url('https://svgshare.com/i/14kA.svg'); /* motif biji kopi SVG transparan */
+            background: #b9935a url('https://svgshare.com/i/14kA.svg');
             background-repeat: repeat;
             background-size: 120px;
             padding: 48px 40px 40px 40px;
@@ -167,24 +181,24 @@
             width: 100%;
         }
         .about-title {
-            color: #a94442;
+            color: #a06a2b;
             font-size: 20px;
             margin-bottom: 12px;
             font-weight: 700;
         }
         .about-headline {
-            font-size: 32px;
-            color: #5a4634;
+            font-size: 2.2rem;
+            color: #fff;
             margin-bottom: 18px;
             font-weight: 700;
             line-height: 1.2;
         }
         .about-headline .highlight {
-            color: #a94442;
+            color: #a06a2b;
         }
         .about-desc {
-            color: #5a4634;
-            font-size: 16px;
+            color: #fff;
+            font-size: 1.1rem;
             margin-bottom: 32px;
             line-height: 1.7;
             max-width: 600px;
@@ -235,115 +249,88 @@
                 font-size: 22px;
             }
         }
+        /* Hero Section */
         .hero-main-container {
-            background-image: url('https://cdn.pixabay.com/photo/2017/01/13/09/23/magic-cube-1976725_1280.jpg');
-            background-size: cover;
-            background-position: center;
-            min-height: 520px;
-            display: flex;
-            align-items: center;
-            padding-left: 10%;
             position: relative;
+            min-height: 420px;
+            background: none;
+            display: flex;
+            align-items: stretch;
             overflow: hidden;
-            margin-top: -12px; /* Adjust for navbar spacing */
+        }
+        .hero-bg-img {
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            width: 100%; height: 100%;
+            background: url('https://cdn.pixabay.com/photo/2022/06/06/09/29/cherries-7245741_1280.jpg') right center/cover no-repeat;
+            z-index: 0;
+        }
+        .hero-curve {
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 65vw;
+            background: #d6b89c;
+            z-index: 1;
+            border-bottom-right-radius: 300px 180px;
+            border-top-right-radius: 300px 180px;
         }
         .hero-content-box {
             position: relative;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 3rem 4rem;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            margin: 0 auto;
             z-index: 2;
+            padding: 64px 0 64px 80px;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
-        .hero-content-box h1 {
-            font-size: 2.8rem;
-            color: #2C3E50;
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
+        .hero-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        .hero-logo .logo {
+            font-size: 2.2rem;
+            color: #b23b1a;
+            font-family: serif;
+            font-weight: bold;
+            margin-right: 12px;
+        }
+        .hero-logo .brand {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+        .hero-title {
+            font-size: 4rem;
             font-weight: 700;
+            color: #a06a2b;
+            letter-spacing: 1px;
         }
-        .hero-content-box p {
+        .hero-title span {
+            color: #fff;
+        }
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #fff;
+            margin: 16px 0 32px 0;
+            font-weight: 400;
+        }
+        .hero-btn {
+            background: #a06a2b;
+            color: #fff;
+            border: none;
+            padding: 14px 36px;
             font-size: 1.1rem;
-            color: #34495E;
-            margin-bottom: 2rem;
-            line-height: 1.8;
-            max-width: 90%;
-        }
-        .hero-content-box .btn {
-            display: inline-block;
-            padding: 0.8rem 2rem;
-            background: #E74C3C;
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
+            border-radius: 6px;
+            cursor: pointer;
             font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid #E74C3C;
-            font-size: 1rem;
-            margin-right: 1rem;
+            transition: background 0.2s;
         }
-        .hero-content-box .btn:hover {
-            background: transparent;
-            color: #E74C3C;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.2);
+        .hero-btn:hover {
+            background: #8b5c1e;
         }
-        .hero-content-box .btn-outline {
-            background: transparent;
-            color: #E74C3C;
-            border: 2px solid #E74C3C;
-        }
-        .hero-content-box .btn-outline:hover {
-            background: #E74C3C;
-            color: white;
-        }
-        @media (max-width: 900px) {
-            .hero-content-box {
-                padding: 2.5rem 3rem;
-                margin: 0 2rem;
-            }
-            .hero-content-box h1 {
-                font-size: 2.4rem;
-                margin-bottom: 1.2rem;
-            }
-            .hero-content-box p {
-                font-size: 1rem;
-                margin-bottom: 1.8rem;
-            }
-            .hero-content-box .btn {
-                padding: 0.7rem 1.8rem;
-                font-size: 0.95rem;
-            }
-        }
-        @media (max-width: 600px) {
-            .hero-content-box {
-                padding: 2rem;
-                margin: 0 1rem;
-            }
-            .hero-content-box h1 {
-                font-size: 2rem;
-                margin-bottom: 1rem;
-            }
-            .hero-content-box p {
-                font-size: 0.95rem;
-                margin-bottom: 1.5rem;
-                max-width: 100%;
-            }
-            .hero-content-box .btn {
-                padding: 0.6rem 1.5rem;
-                font-size: 0.9rem;
-                margin-bottom: 0.8rem;
-                display: block;
-                width: fit-content;
-            }
-            .hero-content-box .btn:last-child {
-                margin-bottom: 0;
-            }
-        }
-
-        /* History Image Section Styles */
+        /* History Section */
         .history-image-container {
             margin-top: 30px;
             text-align: center;
@@ -375,7 +362,7 @@
             }
         }
 
-        /* Image Section Styles */
+        /* Kebun Kami Section */
         .image-section {
             text-align: center;
             margin: 60px auto;
@@ -385,14 +372,14 @@
 
         .image-section-title {
             font-size: 2.5rem;
-            color: #5a4634;
+            color: #a06a2b;
             margin-bottom: 0.8rem;
             font-weight: 700;
         }
 
         .image-section-subtitle {
             font-size: 1.1rem;
-            color: #8D6B4F;
+            color: #fff;
             margin-bottom: 2.5rem;
             line-height: 1.5;
         }
@@ -445,7 +432,7 @@
         .team-section {
             padding: 80px 24px;
             text-align: center;
-            background: #e9ded6;
+            background: #d6b89c;
             position: relative;
             overflow: hidden;
         }
@@ -478,7 +465,7 @@
 
         .team-title {
             font-size: 38px;
-            color: #5a4634;
+            color: #a06a2b;
             margin-bottom: 24px;
             font-weight: 700;
             z-index: 2;
@@ -486,7 +473,7 @@
         }
 
         .team-highlight {
-            color: #a94442;
+            color: #a06a2b;
         }
 
         .team-members {
@@ -500,7 +487,7 @@
         }
 
         .team-member-card {
-            background: #e9ded6;
+            background: #b9935a;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
@@ -612,38 +599,31 @@
     </div>
 
     <div class="hero-main-container">
+        <div class="hero-bg-img"></div>
+        <div class="hero-curve"></div>
         <div class="hero-content-box">
-            <div class="flower-icon"></div>
-            <div class="logo-small"><span>TL</span> Tumbuh Lestari</div>
-            <h1>Tumbuh Lestari</h1>
-            <p class="description">Bergabunglah dengan kami dalam perjalanan ini dan rasakan keajaiban setiap cangkir kopi Tumbuh Lestari.</p>
-            <button class="btn-explore" onclick="window.location.href='#'">Explore</button>
+            <div class="hero-logo">
+                <div class="logo"><span>TL</span></div>
+                <div class="brand">TUMBUH LESTARI</div>
+            </div>
+            <div class="hero-title">Tumbuh <span>Lestari</span></div>
+            <div class="hero-subtitle">Bergabunglah dengan kami dalam perjalanan ini dan rasakan keajaiban setiap cangkir kopi Tumbuh Lestari.</div>
+            <button class="hero-btn" onclick="window.location.href='productspage.php'">Explore</button>
         </div>
     </div>
 
     <div class="about-main">
-        <div class="about-image">
-            <img src="https://via.placeholder.com/600x400/C7B299/FFFFFF?text=About+Us+Image" alt="Tumbuh Lestari Coffee Beans">
+        <div class="about-image" style="display:flex;align-items:center;justify-content:center;background:#b9935a;">
+            <span style="font-family:serif;font-size:10vw;font-weight:bold;color:#b23b1a;line-height:1;">TL</span>
         </div>
         <div class="about-content-bg">
             <div class="about-header">
-                <p class="about-title">Sejarah Perusahaan</p>
-                <h1 class="about-headline">Berkembang Bersama, Menghadirkan Kualitas <span class="highlight">Kopi Terbaik</span></h1>
-                <p class="about-desc">
-                    Tumbuh Lestari dimulai sebagai Kedai Dialog Kopi pada tahun 2018, fokus di F&B di Cibodas. Kami kemudian berpindah lokasi dan berganti nama menjadi Halawa Kopi hingga awal 2020. Pandemi menyebabkan usaha kami tutup sementara.
-                </p>
-                <p class="about-desc">
-                    Dengan memanfaatkan koneksi dan keterampilan dari Halawa Kopi, kami memulai Tumbuh Lestari, mengolah kopi dari kebun di Sukarame. Kami bekerja sama dengan petani, gudang kopi di Cibodas, dan mulai menanam biji kopi di Curug Roda.
-                </p>
-                <p class="about-desc">
-                    Setahun kemudian, kami berhasil mengelola panen pertama kami, dari penanaman hingga penjualan. Kami juga sempat menjual kopi susu kemasan, namun keterbatasan hasil panen menghentikan usaha ini. Kami kembali bekerja sama dengan petani dan gudang di Cibodas untuk memastikan pasokan kopi.
-                </p>
-                <p class="about-desc">
-                    Penjualan kami berkembang dari mulut ke mulut dan sistem pre-order, hingga akhir 2022 kami mulai menggarap marketplace online.
-                </p>
-                <div class="history-image-container">
-                    <img src="https://cdn.pixabay.com/photo/2017/01/13/09/23/magic-cube-1976725_1280.jpg" alt="Coffee Farm History" class="history-company-image">
-                </div>
+                <p class="about-title">Sejarah <span style="color:#fff;font-weight:400;">Perusahaan</span></p>
+                <h1 class="about-headline"><span style="color:#a06a2b;">Sejarah</span> <span style="color:#fff;">Perusahaan</span></h1>
+                <p class="about-desc">Tumbuh Lestari dimulai sebagai Kedai Dialog Kopi pada tahun 2018, fokus di F&B di Cibodas. Kami kemudian berpindah lokasi dan berganti nama menjadi Halawa Kopi hingga awal 2020. Pandemi menyebabkan usaha kami tutup sementara.</p>
+                <p class="about-desc">Dengan memanfaatkan koneksi dan keterampilan dari Halawa Kopi, kami memulai Tumbuh Lestari, mengolah kopi dari kebun di Sukarame. Kami bekerja sama dengan petani, gudang kopi di Cibodas, dan mulai menanam biji kopi di Curug Roda.</p>
+                <p class="about-desc">Setahun kemudian, kami berhasil mengelola panen pertama kami, dari penanaman hingga penjualan. Kami juga sempat menjual kopi susu kemasan, namun keterbatasan hasil panen menghentikan usaha ini. Kami kembali bekerja sama dengan petani dan gudang di Cibodas untuk memastikan pasokan kopi.</p>
+                <p class="about-desc">Penjualan kami berkembang dari mulut ke mulut dan sistem pre-order, hingga akhir 2022 kami mulai menggarap marketplace online.</p>
             </div>
         </div>
     </div>
@@ -651,7 +631,7 @@
     <div class="image-section">
         <h2 class="image-section-title">Kebun Kami</h2>
         <p class="image-section-subtitle">Segar dan Alami, Langsung Dari Kebun Kami</p>
-        <img src="https://cdn.pixabay.com/photo/2017/01/13/09/23/magic-cube-1976725_1280.jpg" alt="Kebun Kopi Kami" class="company-image">
+        <img src="https://cdn.pixabay.com/photo/2015/01/13/13/18/cherries-598170_1280.jpg" alt="Kebun Kopi Kami" class="company-image">
     </div>
 
     <div class="team-section">
@@ -659,21 +639,21 @@
         <div class="team-members">
             <div class="team-member-card">
                 <div class="member-photo">
-                    <!-- Photo for Afrizal Ahmad Rasyidin -->
+                    <img src="Anggota tim/Afrzal Ahmad Rasyidin.png" alt="Afrizal Ahmad Rasyidin" />
                 </div>
                 <h3 class="member-name">Afrizal Ahmad Rasyidin</h3>
                 <p class="member-position">Head & Quality Control</p>
             </div>
             <div class="team-member-card">
                 <div class="member-photo">
-                    <!-- Photo for Fridka Ramadhan Sundara -->
+                    <img src="Anggota tim/Fridka Ramadhan Sundara.png" alt="Fridka Ramadhan Sundara" />
                 </div>
                 <h3 class="member-name">Fridka Ramadhan Sundara</h3>
                 <p class="member-position">Social Media Manager</p>
             </div>
             <div class="team-member-card">
                 <div class="member-photo">
-                    <!-- Photo for Adi Setiadi -->
+                    <img src="Anggota tim/Adi Setiadi.png" alt="Adi Setiadi" />
                 </div>
                 <h3 class="member-name">Adi Setiadi</h3>
                 <p class="member-position">Field Management</p>
