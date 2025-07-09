@@ -419,7 +419,7 @@ if ($q_promo) {
         .product-process-desc {
             font-size: 1rem;
             color: var(--coklat-tua);
-        }
+            }
         /* --- Footer --- */
         .footer-container {
             background-color: var(--coklat-tua);
@@ -471,7 +471,7 @@ if ($q_promo) {
             text-decoration: none;
             transition: color 0.2s;
         }
-        .footer-col ul li a:hover {
+         .footer-col ul li a:hover {
             color: #e0c9a6;
         }
         .footer-col p {
@@ -521,7 +521,7 @@ if ($q_promo) {
             .stat-value { font-size: 1.2rem; }
             .main-image img, .hero-img img { width: 90vw; max-width: 350px; }
             .footer-container::before { height: 40px; transform: translateY(-40px); }
-        }
+          }
     </style>
 </head>
 <body>

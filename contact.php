@@ -9,29 +9,32 @@
         body {
             margin: 0;
             font-family: 'Montserrat', Arial, sans-serif;
-            background: #e9ded6;
-            color: #5a4634;
+            background: #d6b89c;
+            color: #a06a2b;
         }
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 24px 48px 12px 48px;
+            padding: 32px 48px 0 48px;
             background: transparent;
         }
         .logo {
+            font-size: 2.2rem;
             font-weight: bold;
-            font-size: 22px;
-            color: #a94442;
-            letter-spacing: 1px;
+            color: #a06a2b;
+            letter-spacing: 2px;
+            font-family: serif;
             display: flex;
             align-items: center;
         }
         .logo span {
+            color: #b23b1a;
             font-family: serif;
-            font-size: 32px;
+            font-size: 2.5rem;
+            font-weight: bold;
             margin-right: 8px;
-            color: #a94442;
+            letter-spacing: 0;
         }
         .nav-menu {
             display: flex;
@@ -39,18 +42,28 @@
         }
         .nav-menu a {
             text-decoration: none;
-            color: #5a4634;
+            color: #fff;
             font-weight: 500;
-            font-size: 16px;
+            font-size: 1.1rem;
             transition: color 0.2s;
+            position: relative;
         }
-        .nav-menu a:hover {
-            color: #ff8800;
+        .nav-menu a.active, .nav-menu a:hover {
+            color: #a06a2b;
         }
-
+        .nav-menu a.active::after, .nav-menu a:hover::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: #a06a2b;
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+        }
         /* Contact Page Specific Styles */
         .contact-hero {
-            background: #e9ded6;
+            background: #d6b89c;
             padding: 80px 24px;
             text-align: center;
             position: relative;
@@ -85,7 +98,7 @@
 
         .contact-title {
             font-size: 38px;
-            color: #5a4634;
+            color: #a06a2b;
             margin-bottom: 12px;
             font-weight: 700;
             z-index: 2;
@@ -93,12 +106,12 @@
         }
 
         .contact-title .highlight {
-            color: #a94442;
+            color: #a06a2b;
         }
 
         .contact-subtitle {
             font-size: 48px;
-            color: #a94442;
+            color: #fff;
             font-weight: 700;
             z-index: 2;
             position: relative;
@@ -107,12 +120,12 @@
         .contact-info-section {
             padding: 40px 24px 80px 24px;
             text-align: center;
-            background: #e9ded6;
+            background: #d6b89c;
         }
 
         .info-section-title {
             font-size: 28px;
-            color: #5a4634;
+            color: #a06a2b;
             margin-bottom: 40px;
             font-weight: 700;
         }
@@ -127,7 +140,7 @@
         }
 
         .contact-card {
-            background: #d4c1a5;
+            background: #b9935a;
             padding: 30px;
             border-radius: 10px;
             text-align: center;
@@ -136,7 +149,7 @@
         }
 
         .contact-icon-wrapper {
-            background-color: #a68a64;
+            background-color: #a06a2b;
             border-radius: 50%;
             width: 100px;
             height: 100px;
@@ -153,19 +166,19 @@
 
         .contact-detail {
             font-size: 20px;
-            color: #5a4634;
+            color: #a06a2b;
             font-weight: 600;
             margin-bottom: 8px;
         }
 
         .contact-label {
             font-size: 14px;
-            color: #5a4634;
+            color: #fff;
             margin-bottom: 20px;
         }
 
         .contact-button {
-            background: #a94442;
+            background: #a06a2b;
             color: #fff;
             border: none;
             padding: 10px 25px;
@@ -179,7 +192,7 @@
         }
 
         .contact-button:hover {
-            background: #ff8800;
+            background: #8b5c1e;
         }
 
         @media (max-width: 900px) {
@@ -247,12 +260,12 @@
         .social-media-section {
             padding: 80px 24px;
             text-align: center;
-            background: #e9ded6;
+            background: #d6b89c;
         }
 
         .social-media-title {
             font-size: 28px;
-            color: #5a4634;
+            color: #a06a2b;
             margin-bottom: 40px;
             font-weight: 700;
         }
@@ -267,7 +280,7 @@
         }
 
         .social-media-card {
-            background: #d4c1a5;
+            background: #b9935a;
             padding: 30px;
             border-radius: 10px;
             text-align: center;
@@ -276,7 +289,7 @@
         }
 
         .social-media-icon-wrapper {
-            background-color: #a68a64;
+            background-color: #a06a2b;
             border-radius: 50%;
             width: 100px;
             height: 100px;
@@ -293,27 +306,27 @@
 
         .social-media-platform {
             font-size: 20px;
-            color: #5a4634;
+            color: #a06a2b;
             font-weight: 600;
             margin-bottom: 8px;
         }
 
         .social-media-description {
             font-size: 14px;
-            color: #5a4634;
+            color: #fff;
             margin-bottom: 20px;
         }
 
         /* Address Section Styles */
         .address-section {
             padding: 80px 24px;
-            background: #e9ded6;
+            background: #d6b89c;
             text-align: center;
         }
 
         .address-title {
             font-size: 28px;
-            color: #5a4634;
+            color: #a06a2b;
             margin-bottom: 40px;
             font-weight: 700;
             text-align: left;
@@ -353,7 +366,7 @@
             flex: 1;
             min-width: 300px;
             max-width: 400px;
-            background: #d4c1a5;
+            background: #b9935a;
             padding: 30px;
             border-radius: 10px;
             text-align: left;
@@ -362,14 +375,14 @@
 
         .address-details h3 {
             font-size: 24px;
-            color: #5a4634;
+            color: #a06a2b;
             margin-bottom: 15px;
             font-weight: 700;
         }
 
         .address-details p {
             font-size: 16px;
-            color: #5a4634;
+            color: #fff;
             line-height: 1.6;
         }
 
@@ -455,7 +468,12 @@
         <div class="contact-cards-container">
             <div class="contact-card">
                 <div class="contact-icon-wrapper">
-                    <img src="https://svgshare.com/i/14mB.svg" alt="Email Icon">
+                    <!-- Mail Icon SVG -->
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="30" cy="30" r="30" fill="#a06a2b"/>
+                      <rect x="15" y="22" width="30" height="16" rx="3" fill="#fff"/>
+                      <polyline points="15,22 30,36 45,22" fill="none" stroke="#a06a2b" stroke-width="2"/>
+                    </svg>
                 </div>
                 <p class="contact-detail">tumbuhlestaritalks@gmail.com</p>
                 <p class="contact-label">Alamat email Tumbuh Lestari</p>
@@ -463,7 +481,13 @@
             </div>
             <div class="contact-card">
                 <div class="contact-icon-wrapper">
-                    <img src="https://svgshare.com/i/14mE.svg" alt="Phone Icon">
+                    <!-- Phone Icon SVG -->
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="30" cy="30" r="30" fill="#a06a2b"/>
+                      <rect x="22" y="36" width="16" height="4" rx="2" fill="#fff"/>
+                      <rect x="26" y="20" width="8" height="12" rx="4" fill="#fff"/>
+                      <rect x="28" y="24" width="4" height="4" rx="2" fill="#a06a2b"/>
+                    </svg>
                 </div>
                 <p class="contact-detail">+62 838 3203 3996</p>
                 <p class="contact-label">Nomor telepon Tumbuh Lestari</p>
@@ -477,7 +501,13 @@
         <div class="social-media-cards-container">
             <div class="social-media-card">
                 <div class="social-media-icon-wrapper">
-                    <img src="https://svgshare.com/i/14mj.svg" alt="Instagram Icon">
+                    <!-- Instagram Icon SVG -->
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="30" cy="30" r="30" fill="#a06a2b"/>
+                      <rect x="18" y="18" width="24" height="24" rx="8" fill="#fff"/>
+                      <circle cx="30" cy="30" r="7" fill="#a06a2b"/>
+                      <circle cx="38" cy="22" r="2" fill="#a06a2b"/>
+                    </svg>
                 </div>
                 <p class="social-media-platform">@tumbuhlestarikopi</p>
                 <p class="social-media-description">Official Instagram Tumbuh Lestari</p>
@@ -485,7 +515,13 @@
             </div>
             <div class="social-media-card">
                 <div class="social-media-icon-wrapper">
-                    <img src="https://svgshare.com/i/14mh.svg" alt="Tokopedia Icon">
+                    <!-- Tokopedia Icon SVG (simple bag) -->
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="30" cy="30" r="30" fill="#a06a2b"/>
+                      <rect x="20" y="26" width="20" height="16" rx="4" fill="#fff"/>
+                      <rect x="26" y="22" width="8" height="6" rx="2" fill="#fff"/>
+                      <rect x="28" y="24" width="4" height="4" rx="2" fill="#a06a2b"/>
+                    </svg>
                 </div>
                 <p class="social-media-platform">Tumbuh Lestari Kopi</p>
                 <p class="social-media-description">Official Tokopedia Tumbuh Lestari</p>
@@ -493,7 +529,12 @@
             </div>
             <div class="social-media-card">
                 <div class="social-media-icon-wrapper">
-                    <img src="https://svgshare.com/i/14mi.svg" alt="Shopee Icon">
+                    <!-- Shopee Icon SVG (simple S in bag) -->
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="30" cy="30" r="30" fill="#a06a2b"/>
+                      <rect x="20" y="26" width="20" height="16" rx="4" fill="#fff"/>
+                      <text x="30" y="42" text-anchor="middle" font-size="16" fill="#a06a2b" font-family="Arial" font-weight="bold">S</text>
+                    </svg>
                 </div>
                 <p class="social-media-platform">Tumbuh Lestari Kopi</p>
                 <p class="social-media-description">Official Shopee Tumbuh Lestari</p>

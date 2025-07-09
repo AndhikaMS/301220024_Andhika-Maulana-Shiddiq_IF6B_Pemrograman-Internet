@@ -639,24 +639,36 @@
         <div class="team-members">
             <div class="team-member-card">
                 <div class="member-photo">
-                    <img src="Anggota tim/Afrzal Ahmad Rasyidin.png" alt="Afrizal Ahmad Rasyidin" />
+                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="50" cy="50" r="50" fill="#a06a2b"/>
+                      <circle cx="50" cy="40" r="18" fill="#fff"/>
+                      <ellipse cx="50" cy="75" rx="28" ry="18" fill="#fff"/>
+                    </svg>
                 </div>
                 <h3 class="member-name">Afrizal Ahmad Rasyidin</h3>
-                <p class="member-position">Head & Quality Control</p>
+                <div class="member-role">Head & Quality Control</div>
             </div>
             <div class="team-member-card">
                 <div class="member-photo">
-                    <img src="Anggota tim/Fridka Ramadhan Sundara.png" alt="Fridka Ramadhan Sundara" />
+                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="50" cy="50" r="50" fill="#a06a2b"/>
+                      <circle cx="50" cy="40" r="18" fill="#fff"/>
+                      <ellipse cx="50" cy="75" rx="28" ry="18" fill="#fff"/>
+                    </svg>
                 </div>
                 <h3 class="member-name">Fridka Ramadhan Sundara</h3>
-                <p class="member-position">Social Media Manager</p>
+                <div class="member-role">Social Media Manager</div>
             </div>
             <div class="team-member-card">
                 <div class="member-photo">
-                    <img src="Anggota tim/Adi Setiadi.png" alt="Adi Setiadi" />
+                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="50" cy="50" r="50" fill="#a06a2b"/>
+                      <circle cx="50" cy="40" r="18" fill="#fff"/>
+                      <ellipse cx="50" cy="75" rx="28" ry="18" fill="#fff"/>
+                    </svg>
                 </div>
                 <h3 class="member-name">Adi Setiadi</h3>
-                <p class="member-position">Field Management</p>
+                <div class="member-role">Field Management</div>
             </div>
         </div>
     </div>
