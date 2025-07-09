@@ -477,7 +477,7 @@
                 </div>
                 <p class="contact-detail">tumbuhlestaritalks@gmail.com</p>
                 <p class="contact-label">Alamat email Tumbuh Lestari</p>
-                <a href="mailto:tumbuhlestaritalks@gmail.com" class="contact-button">Kirim Email</a>
+                <button type="button" class="contact-button">Kirim Email</button>
             </div>
             <div class="contact-card">
                 <div class="contact-icon-wrapper">
@@ -491,7 +491,7 @@
                 </div>
                 <p class="contact-detail">+62 838 3203 3996</p>
                 <p class="contact-label">Nomor telepon Tumbuh Lestari</p>
-                <a href="tel:+6283832033996" class="contact-button">Hubungi Kami</a>
+                <button type="button" class="contact-button">Hubungi Kami</button>
             </div>
         </div>
     </div>
@@ -511,7 +511,7 @@
                 </div>
                 <p class="social-media-platform">@tumbuhlestarikopi</p>
                 <p class="social-media-description">Official Instagram Tumbuh Lestari</p>
-                <a href="https://www.instagram.com/tumbuhlestarikopi/" target="_blank" class="contact-button">Kunjungi</a>
+                <button type="button" class="contact-button">Kunjungi</button>
             </div>
             <div class="social-media-card">
                 <div class="social-media-icon-wrapper">
@@ -525,7 +525,7 @@
                 </div>
                 <p class="social-media-platform">Tumbuh Lestari Kopi</p>
                 <p class="social-media-description">Official Tokopedia Tumbuh Lestari</p>
-                <a href="#" target="_blank" class="contact-button">Kunjungi</a> <!-- Placeholder for Tokopedia link -->
+                <button type="button" class="contact-button">Kunjungi</button> <!-- Placeholder for Tokopedia link -->
             </div>
             <div class="social-media-card">
                 <div class="social-media-icon-wrapper">
@@ -538,7 +538,7 @@
                 </div>
                 <p class="social-media-platform">Tumbuh Lestari Kopi</p>
                 <p class="social-media-description">Official Shopee Tumbuh Lestari</p>
-                <a href="#" target="_blank" class="contact-button">Kunjungi</a> <!-- Placeholder for Shopee link -->
+                <button type="button" class="contact-button">Kunjungi</button> <!-- Placeholder for Shopee link -->
             </div>
         </div>
     </div>

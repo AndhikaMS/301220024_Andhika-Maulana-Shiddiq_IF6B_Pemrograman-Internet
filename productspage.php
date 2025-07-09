@@ -21,29 +21,32 @@ if ($q) {
         body {
             margin: 0;
             font-family: 'Montserrat', Arial, sans-serif;
-            background: #e9ded6;
-            color: #5a4634;
+            background: #d6b89c;
+            color: #a06a2b;
         }
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 24px 48px 12px 48px;
+            padding: 32px 48px 0 48px;
             background: transparent;
         }
         .logo {
+            font-size: 2.2rem;
             font-weight: bold;
-            font-size: 22px;
-            color: #a94442;
-            letter-spacing: 1px;
+            color: #a06a2b;
+            letter-spacing: 2px;
+            font-family: serif;
             display: flex;
             align-items: center;
         }
         .logo span {
+            color: #b23b1a;
             font-family: serif;
-            font-size: 32px;
+            font-size: 2.5rem;
+            font-weight: bold;
             margin-right: 8px;
-            color: #a94442;
+            letter-spacing: 0;
         }
         .nav-menu {
             display: flex;
@@ -51,18 +54,28 @@ if ($q) {
         }
         .nav-menu a {
             text-decoration: none;
-            color: #5a4634;
+            color: #fff;
             font-weight: 500;
-            font-size: 16px;
+            font-size: 1.1rem;
             transition: color 0.2s;
+            position: relative;
         }
-        .nav-menu a:hover {
-            color: #ff8800;
+        .nav-menu a.active, .nav-menu a:hover {
+            color: #a06a2b;
         }
-
+        .nav-menu a.active::after, .nav-menu a:hover::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: #a06a2b;
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+        }
         /* Products Page Specific Styles */
         .products-hero {
-            background: #e9ded6;
+            background: #d6b89c;
             padding: 80px 24px;
             text-align: center;
             position: relative;
@@ -97,7 +110,7 @@ if ($q) {
 
         .products-title {
             font-size: 38px;
-            color: #5a4634;
+            color: #a06a2b;
             margin-bottom: 12px;
             font-weight: 700;
             z-index: 2;
@@ -105,12 +118,12 @@ if ($q) {
         }
 
         .products-title .highlight {
-            color: #a94442;
+            color: #a06a2b;
         }
 
         .products-subtitle {
             font-size: 48px;
-            color: #a94442;
+            color: #fff;
             font-weight: 700;
             z-index: 2;
             position: relative;
@@ -119,7 +132,7 @@ if ($q) {
         .products-grid-section {
             padding: 40px 24px 80px 24px;
             text-align: center;
-            background: #e9ded6;
+            background: #d6b89c;
         }
 
         .products-grid-container {
@@ -131,7 +144,7 @@ if ($q) {
         }
 
         .product-card {
-            background: #d4c1a5;
+            background: #b9935a;
             padding: 30px;
             border-radius: 10px;
             text-align: left;
@@ -151,28 +164,28 @@ if ($q) {
 
         .product-name {
             font-size: 22px;
-            color: #5a4634;
+            color: #a06a2b;
             font-weight: 700;
             margin-bottom: 10px;
         }
 
         .product-desc {
             font-size: 14px;
-            color: #5a4634;
+            color: #fff;
             line-height: 1.6;
             margin-bottom: 15px;
         }
 
         .product-price {
             font-size: 24px;
-            color: #a94442;
+            color: #fff;
             font-weight: 700;
             margin-top: auto;
             margin-bottom: 20px;
         }
 
         .btn-buy {
-            background: #a94442;
+            background: #a06a2b;
             color: #fff;
             border: none;
             padding: 10px 25px;
@@ -188,7 +201,7 @@ if ($q) {
         }
 
         .btn-buy:hover {
-            background: #ff8800;
+            background: #8b5c1e;
         }
 
         @media (max-width: 900px) {
@@ -260,7 +273,7 @@ if ($q) {
                         <?= nl2br(htmlspecialchars($p['deskripsi'])) ?>
                     </p>
                     <p class="product-price">Rp. <?= number_format($p['harga'], 0, ',', '.') ?></p>
-                    <button class="btn-buy">Pesan Sekarang</button>
+                    <button class="btn-buy" type="button">Pesan Sekarang</button>
                 </div>
             <?php endforeach; ?>
         </div>

@@ -28,29 +28,32 @@ function excerpt($text, $max=120) {
         body {
             margin: 0;
             font-family: 'Montserrat', Arial, sans-serif;
-            background: #e9ded6;
-            color: #5a4634;
+            background: #d6b89c;
+            color: #a06a2b;
         }
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 24px 48px 12px 48px;
+            padding: 32px 48px 0 48px;
             background: transparent;
         }
         .logo {
+            font-size: 2.2rem;
             font-weight: bold;
-            font-size: 22px;
-            color: #a94442;
-            letter-spacing: 1px;
+            color: #a06a2b;
+            letter-spacing: 2px;
+            font-family: serif;
             display: flex;
             align-items: center;
         }
         .logo span {
+            color: #b23b1a;
             font-family: serif;
-            font-size: 32px;
+            font-size: 2.5rem;
+            font-weight: bold;
             margin-right: 8px;
-            color: #a94442;
+            letter-spacing: 0;
         }
         .nav-menu {
             display: flex;
@@ -58,13 +61,24 @@ function excerpt($text, $max=120) {
         }
         .nav-menu a {
             text-decoration: none;
-            color: #5a4634;
+            color: #fff;
             font-weight: 500;
-            font-size: 16px;
+            font-size: 1.1rem;
             transition: color 0.2s;
+            position: relative;
         }
-        .nav-menu a:hover {
-            color: #ff8800;
+        .nav-menu a.active, .nav-menu a:hover {
+            color: #a06a2b;
+        }
+        .nav-menu a.active::after, .nav-menu a:hover::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: #a06a2b;
+            position: absolute;
+            left: 0;
+            bottom: -4px;
         }
         .blog-hero {
             text-align: center;
@@ -72,7 +86,7 @@ function excerpt($text, $max=120) {
         }
         .blog-hero-title {
             font-size: 38px;
-            color: #a68a64;
+            color: #a06a2b;
             font-weight: 700;
             margin-bottom: 10px;
         }
@@ -81,7 +95,7 @@ function excerpt($text, $max=120) {
             color: #fff;
             font-weight: 700;
             margin-bottom: 0;
-            text-shadow: 0 2px 8px #a68a64;
+            text-shadow: 0 2px 8px #a06a2b;
         }
         .blog-list-section {
             max-width: 1200px;
@@ -95,7 +109,7 @@ function excerpt($text, $max=120) {
             justify-content: center;
         }
         .blog-card {
-            background: #d4c1a5;
+            background: #b9935a;
             border: 1px solid #bfa77a;
             border-radius: 10px;
             width: 340px;
@@ -107,18 +121,18 @@ function excerpt($text, $max=120) {
         .blog-title {
             font-size: 20px;
             font-weight: 700;
-            color: #a94442;
+            color: #a06a2b;
             margin-bottom: 10px;
         }
         .blog-excerpt {
             font-size: 15px;
-            color: #5a4634;
+            color: #fff;
             margin-bottom: 16px;
             min-height: 60px;
         }
         .blog-meta {
             font-size: 13px;
-            color: #7a6a4f;
+            color: #fff;
             margin-bottom: 8px;
         }
         .blog-footer {
@@ -127,7 +141,7 @@ function excerpt($text, $max=120) {
             align-items: center;
         }
         .btn-readmore {
-            background: #a68a64;
+            background: #a06a2b;
             color: #fff;
             border: none;
             padding: 8px 18px;
@@ -139,7 +153,7 @@ function excerpt($text, $max=120) {
             transition: background 0.2s;
         }
         .btn-readmore:hover {
-            background: #a94442;
+            background: #8b5c1e;
         }
         @media (max-width: 900px) {
             .blog-list-container {
@@ -190,7 +204,7 @@ function excerpt($text, $max=120) {
                     <div class="blog-excerpt"><?= htmlspecialchars(excerpt($b['konten'])) ?></div>
                     <div class="blog-footer">
                         <div class="blog-meta">oleh Admin<br><?= strftime('%A, %d %B %Y', strtotime($b['created_at'])) ?></div>
-                        <a href="blog_detail.php?id=<?= $b['id'] ?>" class="btn-readmore">Lihat Selengkapnya</a>
+                        <button type="button" class="btn-readmore">Lihat Selengkapnya</button>
                     </div>
                 </div>
             <?php endforeach; ?>
