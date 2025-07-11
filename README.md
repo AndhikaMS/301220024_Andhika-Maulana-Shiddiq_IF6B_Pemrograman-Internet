@@ -37,7 +37,6 @@ Aplikasi web Tumbuh Lestari adalah sistem informasi berbasis PHP untuk pengelola
 - Cek/ubah konfigurasi koneksi di file `koneksi.php` jika perlu
 
 ### 3. **Menjalankan Aplikasi**
-- Ubah folder proyek menjadi TumbuhLestari.
 - Buka browser dan akses: `http://localhost/TumbuhLestari/index.php`
 - Untuk dashboard admin, akses: `http://localhost/TumbuhLestari/home.php` (akan redirect ke login jika belum login)
 - Login menggunakan akun admin yang sudah terdaftar di database yakni Username: admin, Password: admin123
