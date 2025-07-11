@@ -32,24 +32,18 @@ Aplikasi web Tumbuh Lestari adalah sistem informasi berbasis PHP untuk pengelola
 ### 2. **Setup Database**
 - Buka `phpmyadmin` (http://localhost/phpmyadmin)
 - Buat database baru, misal: `tumbuhlestari`
-- Import file SQL yang sesuai (lihat file `Histori SQL.txt` atau file SQL yang Anda miliki)
+- Import file `tumbuh_lestari.sql` yang ada di folder import_database
 - Pastikan tabel `produk`, `blog`, dan tabel user/admin sudah ada
 - Cek/ubah konfigurasi koneksi di file `koneksi.php` jika perlu
 
 ### 3. **Menjalankan Aplikasi**
+- Ubah folder proyek menjadi TumbuhLestari.
 - Buka browser dan akses: `http://localhost/TumbuhLestari/index.php`
 - Untuk dashboard admin, akses: `http://localhost/TumbuhLestari/home.php` (akan redirect ke login jika belum login)
-- Login menggunakan akun admin yang sudah terdaftar di database
+- Login menggunakan akun admin yang sudah terdaftar di database yakni Username: admin, Password: admin123
 
 ### 4. **Fitur Admin**
 - Setelah login, admin dapat menambah, mengedit, dan menghapus produk & blog
 - Upload gambar produk ke folder `uploads/`
 - Upload foto anggota tim ke folder `Anggota tim/`
-
-### 5. **Catatan**
-- Semua gambar yang diambil dari internet sebaiknya diunduh dan disimpan lokal agar aplikasi tetap berjalan tanpa koneksi internet
-- Untuk keamanan, jangan gunakan password default untuk admin
-
----
-
-**Aplikasi ini dikembangkan untuk kebutuhan tugas/portofolio. Silakan modifikasi sesuai kebutuhan Anda.** 
+- Kembali ke `http://localhost/TumbuhLestari/index.php` untuk melihat fitur-fitur seperti sejarah perusahaan, dan sebagainya.
